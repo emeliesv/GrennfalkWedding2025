@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+  font-family: "Almond Whisp";
+  src: url("/fonts/AlmondWhisp.ttf");
+}
+
+@layer base {
+  body {
+    @apply font-serif text-jossanKalleNeutralDark;
+  }
+}
