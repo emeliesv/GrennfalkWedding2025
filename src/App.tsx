@@ -1,60 +1,36 @@
-import { useRef } from "react";
-import Hero from "./components/Hero";
-import Header from "./components/Header";
-import Footer from "./components/Footer";
-import Toastmasters from "./components/Toastmasters";
-import { GuestInfo } from "./components/GuestInfo";
-import { Reception } from "./components/Reception";
-import { Accomodations } from "./components/Accomodations";
-import { Transport } from "./components/Transport";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+
 import { ModalProvider } from "./context/DialogContext";
+import { AuthProvider } from "./context/AuthContext";
+
+import AdminPage from "./pages/AdminPage";
+import AdminLogin from "./pages/AdminLogin";
+
+import ProtectedRoute from "./components/ProtectedRoute";
+import Home from "./pages/Home";
 
 const App = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const toastmasterRef = useRef<HTMLDivElement>(null);
-  const infoRef = useRef<HTMLDivElement>(null);
-  const receptionRef = useRef<HTMLDivElement>(null);
-  const accomodationRef = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLDivElement>(null);
-
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
-
   return (
-    <ModalProvider>
-      <Header
-        scrollToHero={() => scrollToSection(heroRef)}
-        scrollToToastmasters={() => scrollToSection(toastmasterRef)}
-        scrollToInfo={() => scrollToSection(infoRef)}
-        scrollToReception={() => scrollToSection(receptionRef)}
-        scrollToAccomodation={() => scrollToSection(accomodationRef)}
-        scrollToFooter={() => scrollToSection(footerRef)}
-      />
-      <main>
-        <div ref={heroRef}>
-          <Hero />
-        </div>
-        <div ref={toastmasterRef}>
-          <Toastmasters />
-        </div>
-        <div ref={infoRef}>
-          <GuestInfo />
-        </div>
-        <div ref={receptionRef}>
-          <Reception />
-        </div>
-        <div ref={accomodationRef}>
-          <Accomodations />
-          <Transport />
-        </div>
-      </main>
-      <div ref={footerRef}>
-        <Footer />
-      </div>
-    </ModalProvider>
+    <AuthProvider>
+      <ModalProvider>
+        <Router>
+          {/* Jag tror jag behöver lägga in Header här, men undersök då hur det blir med useRef och scrollbeteendet */}
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/login" element={<AdminLogin />} />
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute>
+                  <AdminPage />
+                </ProtectedRoute>
+              }
+            />
+          </Routes>
+          {/* Jag tror jag behöver lägga in Footer här, men undersök då hur det blir med useRef och scrollbeteendet */}
+        </Router>
+      </ModalProvider>
+    </AuthProvider>
   );
 };
 

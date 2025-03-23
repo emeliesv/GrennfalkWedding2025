@@ -1,4 +1,6 @@
 import { useEffect, useRef, useState } from "react";
+import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { db } from "../firebase/firebaseConfig";
 import { useModal } from "../context/DialogContext";
 import Button from "./Button";
 
@@ -18,7 +20,7 @@ const RSVP = (): JSX.Element => {
     }
   }, [isOpen]);
 
-  const handleSubmit = (event: React.FormEvent) => {
+  const handleSubmit = async (event: React.FormEvent) => {
     event.preventDefault();
 
     if (!attendance) {
@@ -26,16 +28,18 @@ const RSVP = (): JSX.Element => {
       return;
     }
 
-    const emailBody = `
-    Närvaro: ${attendance}
-    Allergier: ${allergies}
-    Övriga kommentarer: ${comments}`;
-
-    const mailToLink = `mailto:emeliesv@live.se?subject=RSVP Svar&body=${encodeURIComponent(
-      emailBody
-    )}`;
-
-    window.location.href = mailToLink;
+    try {
+      await addDoc(collection(db, "attendanceCollection"), {
+        name: "Test Testsson",
+        timestamp: new Date(),
+        attendance: attendance,
+        allergies: allergies,
+        comments: comments,
+      });
+      console.log("Denna data ska nu finnas i Firestore!");
+    } catch (error) {
+      console.log("Fel vid sparande:", error);
+    }
   };
 
   return (
@@ -90,3 +94,13 @@ const RSVP = (): JSX.Element => {
 };
 
 export default RSVP;
+/* const emailBody = `
+    Närvaro: ${attendance}
+    Allergier: ${allergies}
+    Övriga kommentarer: ${comments}`;
+
+    const mailToLink = `mailto:emeliesv@live.se?subject=RSVP Svar&body=${encodeURIComponent(
+      emailBody
+    )}`;
+
+    window.location.href = mailToLink; */
