@@ -16,7 +16,7 @@ const Footer = () => {
   /*   const { openModal } = useModal(); */
 
   return (
-    <footer className="flex flex-col justify-center items-center py-10 bg-jossanKalleAccent">
+    <footer className="flex flex-col justify-center items-center py-10 px-6 md:px-0 bg-jossanKalleAccent">
       <p className="font-bold text-center md:w-[615px] pb-10">
         GLÖM EJ: Namn på vilka som kommer, anmäl allergi/matpreferenser, om man
         vill åka med buss till och/eller från hotell i södertälje, annat viktigt

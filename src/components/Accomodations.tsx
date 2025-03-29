@@ -9,7 +9,10 @@ export const Accomodations = (): JSX.Element => {
           <h2 className="font-display text-4xl md:text-6xl m-4">Boende</h2>
           <p>
             Behöver man boende ser vi gärna att man bokar hotell{" "}
-            <a href="https://www.elite.se/hotell/sodertalje/ad-astra-by-elite/">
+            <a
+              href="https://www.elite.se/hotell/sodertalje/ad-astra-by-elite/"
+              className="underline hover:font-semibold"
+            >
               Ad Astra by Elite
             </a>{" "}
             i Södertälje. Brudparet ska även de bo där från fredag - söndag.

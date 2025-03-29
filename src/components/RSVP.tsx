@@ -42,6 +42,12 @@ const RSVP = (): JSX.Element => {
     }
   };
 
+  /* Lägga till radioknappar för transport:
+  Ja: till och från vigsel och hotell
+  Ja: till vigsel enbart
+  Ja: till hotell enbart
+  Nej */
+
   return (
     <dialog ref={dialogRef} className="rounded-xl">
       <button onClick={closeModal} className="text-4xl md:text-6xl">

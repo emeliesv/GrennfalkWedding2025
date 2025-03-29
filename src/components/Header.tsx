@@ -31,7 +31,7 @@ const Header = ({
   return (
     <header className={`${hamburgerOpen} && bg-jossanKalleSecondary`}>
       <nav>
-        <ul className="hidden sm:flex justify-end p-3">
+        <ul className="hidden sm:flex justify-end p-3 text-linkText">
           <li className="p-1">
             <a
               href="#hero"
@@ -111,7 +111,7 @@ const Header = ({
         >
           <Burger isOpen={hamburgerOpen} />
           {hamburgerOpen && (
-            <ul className="flex flex-col py-3 absolute text-right right-0 top-8 w-full bg-jossanKalleSecondary border-b-2 border-jossanKalleBrand">
+            <ul className="flex flex-col py-3 absolute text-right right-0 top-8 w-full bg-jossanKalleSecondary border-b-2 border-jossanKalleBrand text-linkText">
               <li className="py-1">
                 <a
                   href="#hero"

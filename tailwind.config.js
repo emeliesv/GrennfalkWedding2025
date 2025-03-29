@@ -24,7 +24,7 @@ export default {
         h2: "4rem",
         bodyregular: "1.125rem",
         bodys: "0.875rem",
-        linkText: "1rem",
+        linkText: "1.125rem",
         btnText: "3rem",
       },
       borderColor: {
