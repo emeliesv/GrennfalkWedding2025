@@ -10,49 +10,43 @@ import { Accomodations } from "../components/Accomodations";
 import { Transport } from "../components/Transport";
 
 const Home = () => {
-  const heroRef = useRef<HTMLDivElement>(null);
-  const toastmasterRef = useRef<HTMLDivElement>(null);
-  const infoRef = useRef<HTMLDivElement>(null);
-  const receptionRef = useRef<HTMLDivElement>(null);
-  const accomodationRef = useRef<HTMLDivElement>(null);
-  const footerRef = useRef<HTMLDivElement>(null);
-
-  const scrollToSection = (ref: React.RefObject<HTMLDivElement>) => {
-    if (ref.current) {
-      ref.current.scrollIntoView({ behavior: "smooth" });
-    }
-  };
+  const heroRef = useRef<HTMLDivElement | null>(null);
+  const toastRef = useRef<HTMLDivElement | null>(null);
+  const infoRef = useRef<HTMLDivElement | null>(null);
+  const accomodationRef = useRef<HTMLDivElement | null>(null);
+  const receptionRef = useRef<HTMLDivElement | null>(null);
+  const footerRef = useRef<HTMLDivElement | null>(null);
 
   return (
     <>
       <Header
-        scrollToHero={() => scrollToSection(heroRef)}
-        scrollToToastmasters={() => scrollToSection(toastmasterRef)}
-        scrollToInfo={() => scrollToSection(infoRef)}
-        scrollToReception={() => scrollToSection(receptionRef)}
-        scrollToAccomodation={() => scrollToSection(accomodationRef)}
-        scrollToFooter={() => scrollToSection(footerRef)}
+        heroRef={heroRef}
+        toastRef={toastRef}
+        infoRef={infoRef}
+        accomodationRef={accomodationRef}
+        receptionRef={receptionRef}
+        footerRef={footerRef}
       />
 
       <main>
-        <div ref={heroRef}>
+        <div id="hero" ref={heroRef}>
           <Hero />
         </div>
-        <div ref={toastmasterRef}>
+        <div id="toastmasters" ref={toastRef}>
           <Toastmasters />
         </div>
-        <div ref={infoRef}>
+        <div id="guestinfo" ref={infoRef}>
           <GuestInfo />
         </div>
-        <div ref={receptionRef}>
+        <div id="reception" ref={receptionRef}>
           <Reception />
         </div>
-        <div ref={accomodationRef}>
+        <div id="accomodations-and-transport" ref={accomodationRef}>
           <Accomodations />
           <Transport />
         </div>
       </main>
-      <div ref={footerRef}>
+      <div id="footer" ref={footerRef}>
         <Footer />
       </div>
     </>

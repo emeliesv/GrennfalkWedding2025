@@ -1,9 +1,9 @@
-import Button from "./Button";
+/* import Button from "./Button";
 import { useModal } from "../context/DialogContext";
-import RSVP from "./RSVP";
+import RSVP from "./RSVP"; */
 
 const Hero = () => {
-  const { openModal } = useModal();
+  /* const { openModal } = useModal(); */
   return (
     <section className="bg-jossanKalleSecondary grid grid-cols-1 md:grid-cols-2 gap-4justify-items-center items-center">
       <article className="flex flex-col justify-center items-center py-10">
@@ -12,8 +12,8 @@ const Hero = () => {
         </h1>
         <p>09 Augusti 2025</p>
         <p>Bröthagen, 147 91 Grödinge</p>
-        <Button onClickFunction={openModal}>RSVP</Button>
-        <RSVP />
+        {/* <Button onClickFunction={openModal}>RSVP</Button>
+        <RSVP /> */}
       </article>
       <div className="bg-jossanKalleBrand px-14 md:px-28 py-5">
         <figure>

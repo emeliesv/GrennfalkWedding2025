@@ -27,6 +27,9 @@ export default {
         linkText: "1rem",
         btnText: "3rem",
       },
+      borderColor: {
+        jossanKalleBrand: "#902119",
+      },
     },
   },
   plugins: [],

@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { collection, addDoc, Timestamp } from "firebase/firestore";
+import { collection, addDoc /* Timestamp */ } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 import { useModal } from "../context/DialogContext";
 import Button from "./Button";
@@ -44,14 +44,17 @@ const RSVP = (): JSX.Element => {
 
   return (
     <dialog ref={dialogRef} className="rounded-xl">
-      <Button type="button" onClickFunction={closeModal}>
+      <button onClick={closeModal} className="text-4xl md:text-6xl">
         X
-      </Button>
-      <form onSubmit={handleSubmit}>
-        <fieldset>
-          <legend className="font-display text-6xl">RSVP</legend>
-          <label>
+      </button>
+      <form onSubmit={handleSubmit} className="px-6">
+        <fieldset className="flex flex-col">
+          <legend className="font-display text-4xl md:text-6xl text-center">
+            RSVP
+          </legend>
+          <label htmlFor="attendance-yes">
             <input
+              id="attendance-yes"
               type="radio"
               name="attendance"
               value="Ja"
@@ -60,8 +63,9 @@ const RSVP = (): JSX.Element => {
             />{" "}
             Räkna med mig, jag kommer!
           </label>
-          <label>
+          <label htmlFor="attendance-no">
             <input
+              id="attendance-no"
               type="radio"
               name="attendance"
               value="Nej"
@@ -71,23 +75,25 @@ const RSVP = (): JSX.Element => {
           </label>
         </fieldset>
 
-        <label>
+        <label htmlFor="allergies">
           Allergier:
           <input
+            id="allergies"
             type="text"
             value={allergies}
             onChange={(event) => setAllergies(event.target.value)}
           />
         </label>
 
-        <label>
-          ÖVriga kommentarer:
+        <label htmlFor="comments">
+          Övriga kommentarer:
           <textarea
+            id="comments"
             value={comments}
             onChange={(event) => setComments(event.target.value)}
           />
         </label>
-        <Button type="submit">RSVP</Button>
+        <Button type="submit">Skicka svar</Button>
       </form>
     </dialog>
   );

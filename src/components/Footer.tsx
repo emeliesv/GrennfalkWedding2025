@@ -1,5 +1,9 @@
-import Button from "./Button";
+/* import Button from "./Button"; */
 import Image from "./ImageComponent";
+/* import RSVP from "./RSVP";
+
+import { useModal } from "../context/DialogContext"; */
+
 import cake from "/assets/tårta.png?url";
 import bottlewGlass from "/assets/flaskaoglas.png?url";
 import candle from "/assets/ljus.png?url";
@@ -9,6 +13,8 @@ import lemons from "/assets/citroner.png?url";
 import tower from "/assets/bubbeltorn.png?url";
 
 const Footer = () => {
+  /*   const { openModal } = useModal(); */
+
   return (
     <footer className="flex flex-col justify-center items-center py-10 bg-jossanKalleAccent">
       <p className="font-bold text-center md:w-[615px] pb-10">
@@ -17,9 +23,12 @@ const Footer = () => {
         vi kan behöva veta. OBS boende fixar man själv. NU BÖRJAR VI
         NEDRÄKNINGEN! 
       </p>
-      <Button />
+      {/* 
+      <Button onClickFunction={openModal}>RSVP</Button>
+      <RSVP /> */}
+
       <p className="pt-10">Réspondez s'il vous plaît</p>
-      <div className="flex flex-row items-baseline">
+      <div className="flex flex-col md:flex-row items-baseline">
         <Image srcUrl={cake} altText="" hidden={true} />
         <Image srcUrl={bottlewGlass} altText="" hidden={true} size="small" />
         <Image

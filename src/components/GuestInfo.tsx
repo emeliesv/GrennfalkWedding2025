@@ -3,10 +3,12 @@ import Image from "./ImageComponent";
 
 export const GuestInfo = (): JSX.Element => {
   return (
-    <section className="flex flex-col p-5 bg-jossanKalleSecondary">
-      <h2 className="font-display text-6xl mt-3 mb-5">Gästinformation</h2>
-      <div className="flex flex-row justify-center">
-        <div className="w-[400px]">
+    <section className="flex flex-col p-6 md:p-5 bg-jossanKalleSecondary">
+      <h2 className="text-center font-display text-3xl md:text-6xl mt-3 mb-5">
+        Gästinformation
+      </h2>
+      <div className="flex flex-col md:flex-row justify-center mt-6">
+        <div className="md:w-[400px] text-bodyregular">
           <p>
             <b>Klädsel:</b>Ha på dig va fan du vill! Men helst inte naken.
             Sommarfin!
@@ -31,7 +33,7 @@ export const GuestInfo = (): JSX.Element => {
           <p>Är barn välkomna?</p>
         </div>
         <Image srcUrl={cake} altText="" />
-        <div className="w-[400px]">
+        <div className="md:w-[400px] text-bodyregular">
           <p>
             <b>Transport:</b>Se nedan. Anmäl i RSVP om man vill åka med i buss
             till hotellet.
