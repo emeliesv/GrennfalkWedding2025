@@ -46,7 +46,8 @@ const Toastmasters = (): JSX.Element => {
             <p className="text-bodyregular">
               Johan tillhör brudens syster Agnes. Hans alter ego efter 4 öl
               heter Jonas och är snäppet trevligare än Johan själv. 6:e bästa
-              paddelspelaren i Nyköping enligt honom själv.
+              paddelspelaren i Nyköping enligt honom själv. Kontakt: 070 617 18
+              30
             </p>
           </div>
         </article>
