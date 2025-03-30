@@ -8,7 +8,7 @@ export const GuestInfo = (): JSX.Element => {
         Gästinformation
       </h2>
       <div className="flex flex-col md:flex-row justify-center mt-6">
-        <div className="md:w-[400px] text-bodyregular">
+        <div className="flex flex-col gap-2 md:w-[400px] text-bodyregular">
           <p>
             <b>Klädsel:</b>Ha på dig va fan du vill! Men helst inte naken.
             Sommarfin!
@@ -26,7 +26,7 @@ export const GuestInfo = (): JSX.Element => {
           <p>Är barn välkomna?</p>
         </div>
         <Image srcUrl={cake} altText="" />
-        <div className="md:w-[400px] text-bodyregular">
+        <div className="flex flex-col gap-2 md:w-[400px] text-bodyregular">
           <p>
             <b>Transport:</b>Se nedan. Anmäl i RSVP om man vill åka med i buss
             till hotellet.
