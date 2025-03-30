@@ -15,15 +15,8 @@ export const GuestInfo = (): JSX.Element => {
           </p>
           <p>
             <b>Mat och dryck:</b>Mat och dryck kommer serveras under dagen.
-            Kocken{" "}
-            <a
-              href="https://albinedberg.se/"
-              className="underline hover:font-semibold"
-            >
-              Albin Edberg
-            </a>{" "}
-            ser till att den blir god.  Allergier/kostavvikelser anmäls i RSVP.
-            Fri bar! Med eller utan alkohol.
+            Vilken kock det blir avslöjas inom kort. Allergier/kostavvikelser
+            anmäls i RSVP. Fri bar! Med eller utan alkohol.
           </p>
           <p>
             <b>RSVP:</b>Görs längst ned på sidan

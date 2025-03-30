@@ -17,31 +17,41 @@ const Footer = () => {
 
   return (
     <footer className="flex flex-col justify-center items-center py-10 px-6 md:px-0 bg-jossanKalleAccent">
-      <p className="font-bold text-center md:w-[615px] pb-10">
+      <p className="md:text-center md:w-[615px]">
         GLÖM EJ: Namn på vilka som kommer, anmäl allergi/matpreferenser, om man
         vill åka med buss till och/eller från hotell i södertälje, annat viktigt
-        vi kan behöva veta. OBS boende fixar man själv. NU BÖRJAR VI
-        NEDRÄKNINGEN! 
+        vi kan behöva veta. <br />
+        <b>OBS! boende fixar man själv.</b>
       </p>
       {/* 
       <Button onClickFunction={openModal}>RSVP</Button>
       <RSVP /> */}
-
-      <p className="pt-10">Réspondez s'il vous plaît</p>
-      <div className="flex flex-col md:flex-row items-baseline">
-        <Image srcUrl={cake} altText="" hidden={true} />
-        <Image srcUrl={bottlewGlass} altText="" hidden={true} size="small" />
+      <p className="py-4 w-full md:text-center">NU BÖRJAR VI NEDRÄKNINGEN! </p>
+      <p className="pb-4 w-full md:text-center">Réspondez s'il vous plaît</p>
+      <div className="flex flex-row flex-wrap md:flex-nowrap items-baseline justify-center">
+        <Image
+          srcUrl={cake}
+          altText=""
+          hidden={true}
+          customClass="h-28 w-auto md:h-56"
+        />
+        <Image
+          srcUrl={bottlewGlass}
+          altText=""
+          hidden={true}
+          size="small"
+          customClass="w-28"
+        />
         <Image
           srcUrl={candle}
           altText=""
           hidden={true}
-          size="small"
-          customClass="h-56"
+          customClass="h-24 w-auto md:h-56"
         />
         <Image srcUrl={tomatos} altText="" hidden={true} size="xsmall" />
         <Image srcUrl={plate} altText="" hidden={true} size="small" />
         <Image srcUrl={lemons} altText="" hidden={true} size="xsmall" />
-        <Image srcUrl={tower} altText="" hidden={true} />
+        <Image srcUrl={tower} altText="" hidden={true} size="small" />
       </div>
     </footer>
   );
