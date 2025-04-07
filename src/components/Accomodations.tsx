@@ -16,9 +16,7 @@ export const Accomodations = (): JSX.Element => {
               Ad Astra by Elite
             </a>{" "}
             i Södertälje. Brudparet ska även de bo där från fredag - söndag.
-            Tyvärr kunde de inte fixa rabattkod men nämn vid bokning att ni
-            tillhör Josefin och Kalles sällskap så kanske vi lyckas få rum nära
-            varann.
+            Använd länken för bokning så får ni 10% rabatt.
           </p>
         </div>
         <Image
