@@ -10,16 +10,16 @@ export const GuestInfo = (): JSX.Element => {
       <div className="flex flex-col md:flex-row justify-center mt-6">
         <div className="flex flex-col gap-2 md:w-[400px] text-bodyregular">
           <p>
-            <b>Klädsel:</b>Ha på dig va fan du vill! Men helst inte naken.
+            <b>Klädsel: </b>Ha på dig va fan du vill! Men helst inte naken.
             Sommarfin!
           </p>
           <p>
-            <b>Mat och dryck:</b>Bubbel med snittar efter vigseln och sedan
+            <b>Mat och dryck: </b>Bubbel med snittar efter vigseln och sedan
             middag. Allergier/kostavvikelser anmäls i RSVP. Fri bar! Med eller
             utan alkohol.
           </p>
           <p>
-            <b>OSA:</b>Svara längst upp eller längst ned på sidan. Sista
+            <b>OSA: </b>Svara längst upp eller längst ned på sidan. Sista
             svarsdag: <b>1 juni 2025</b>
           </p>
           <p>
@@ -53,8 +53,8 @@ export const GuestInfo = (): JSX.Element => {
             natten.
           </p>
           <p>
-            <b>Gåvor:</b>Att ni kommer är gåva nog för oss. Men om man verkligen
-            vill ge något är bidrag till bröllopsresa uppskattat.
+            <b>Gåvor: </b>Att ni kommer är gåva nog för oss. Men om man
+            verkligen vill ge något är bidrag till bröllopsresa uppskattat.
           </p>
           <p>
             Finns det ytterligare funderingar kontakta någon av våra två
