@@ -20,9 +20,12 @@ export const GuestInfo = (): JSX.Element => {
           </p>
           <p>
             <b>OSA: </b>Svara längst upp eller längst ned på sidan. Sista
-            svarsdag: <b>1 juni 2025</b>
+            svarsdag:
+            <br />
+            <b>15 juni 2025</b>
           </p>
           <p>
+            <b>Vigsel: </b>
             Vigsel kommer äga rum utomhus, medan middagen hålls inomhus i ladan
             på Bröthagen. Tänk gärna på att ta med extra kläder efter väder.
           </p>
