@@ -15,7 +15,9 @@ const Button: FC<ButtonProps> = ({
 }) => {
   return (
     <button
-      className="px-5 py-2 w-80 text-btnText rounded-full font-display bg-jossanKalleBrand hover:bg-jossanKalleNeutralDark text-jossanKalleSecondary"
+      className={`px-5 ${
+        type === "submit" ? "text-4xl w-72" : "text-btnText w-80"
+      }  py-2 rounded-full font-display bg-jossanKalleBrand hover:bg-jossanKalleNeutralDark text-jossanKalleSecondary`}
       type={type}
       onClick={onClickFunction}
       disabled={disabled}

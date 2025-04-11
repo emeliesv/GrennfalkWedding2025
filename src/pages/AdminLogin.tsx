@@ -8,6 +8,8 @@ type User = {
   password: string;
 };
 
+/* HÄR ÄR DET NÅGOT KNAS MED INLOGG: Klagar på api-nyckel. Kolla med chat */
+
 const AdminLogin = () => {
   const [user, setUser] = useState<User>({ email: "", password: "" });
   const navigate = useNavigate();

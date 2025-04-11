@@ -9,14 +9,21 @@ const RSVP = (): JSX.Element => {
   const dialogRef = useRef<HTMLDialogElement>(null);
 
   const [attendance, setAttendance] = useState<string | null>(null);
+  const [transport, setTransport] = useState<string | null>(null);
   const [allergies, setAllergies] = useState("Ja, nämligen ");
   const [comments, setComments] = useState("");
+  const [guest, setGuest] = useState("");
 
   useEffect(() => {
     if (isOpen) {
       dialogRef.current?.showModal();
     } else {
       dialogRef.current?.close();
+      setAttendance(null);
+      setAllergies("");
+      setTransport(null);
+      setComments("");
+      setGuest("");
     }
   }, [isOpen]);
 
@@ -30,9 +37,10 @@ const RSVP = (): JSX.Element => {
 
     try {
       await addDoc(collection(db, "attendanceCollection"), {
-        name: "Test Testsson",
+        name: guest,
         timestamp: new Date(),
         attendance: attendance,
+        transport: transport,
         allergies: allergies,
         comments: comments,
       });
@@ -42,22 +50,44 @@ const RSVP = (): JSX.Element => {
     }
   };
 
-  /* Lägga till radioknappar för transport:
-  Ja: till och från vigsel och hotell
-  Ja: till vigsel enbart
-  Ja: till hotell enbart
-  Nej */
-
   return (
-    <dialog ref={dialogRef} className="rounded-xl">
-      <button onClick={closeModal} className="text-4xl md:text-6xl">
+    <dialog
+      ref={dialogRef}
+      className={`rounded-xl p-8 relative ${
+        isOpen ? "flex flex-col" : "hidden"
+      } items-center bg-jossanKalleSecondary shadow-md`}
+    >
+      <button
+        onClick={closeModal}
+        className="text-4xl md:text-6xl absolute right-5 top-1"
+      >
         X
       </button>
-      <form onSubmit={handleSubmit} className="px-6">
-        <fieldset className="flex flex-col">
+
+      <form
+        onSubmit={handleSubmit}
+        className="flex flex-col px-6 gap-3 mt-9 items-center"
+      >
+        <fieldset className="flex flex-col gap-2">
           <legend className="font-display text-4xl md:text-6xl text-center">
             RSVP
           </legend>
+
+          <label
+            htmlFor="guestName"
+            className="flex flex-col md:flex-row gap-1 mt-4"
+          >
+            Namn:
+            <input
+              type="text"
+              id="guestName"
+              name="guestName"
+              onChange={(event) => setGuest(event?.target.value)}
+              value={guest}
+              className="border-solid border-jossanKalleBrand border-[1px] w-52 px-2"
+            />
+          </label>
+
           <label htmlFor="attendance-yes">
             <input
               id="attendance-yes"
@@ -79,27 +109,76 @@ const RSVP = (): JSX.Element => {
             />{" "}
             Tyvärr har jag inte möjlighet att komma
           </label>
+
+          <div className="flex flex-col">
+            <label htmlFor="allergies">
+              Allergier:{" "}
+              <input
+                id="allergies"
+                type="text"
+                value={allergies}
+                onChange={(event) => setAllergies(event.target.value)}
+                className="border-solid border-jossanKalleBrand border-[1px] w-52 px-2"
+              />
+            </label>
+          </div>
+
+          <legend>Vill du åka med buss?</legend>
+          <label htmlFor="yes-all">
+            <input
+              id="yes-all"
+              type="radio"
+              name="transport"
+              value="Ja, till och från vigsel"
+              onChange={() => setTransport("Ja, till och från vigsel")}
+              required
+            />{" "}
+            Ja, både till och från vigseln
+          </label>
+          <label htmlFor="yes-to">
+            <input
+              id="yes-to"
+              type="radio"
+              name="transport"
+              value="Ja, från hotell till vigsel"
+              onChange={() => setTransport("Ja, från hotell till vigsel")}
+            />{" "}
+            Ja, från hotell till vigseln
+          </label>
+          <label htmlFor="yes-from">
+            <input
+              id="yes-from"
+              type="radio"
+              name="transport"
+              value="Ja, från vigsel till hotell"
+              onChange={() => setTransport("Ja, från vigsel till hotell")}
+            />{" "}
+            Ja, från vigseln till hotell
+          </label>
+          <label htmlFor="no-all">
+            <input
+              id="no-all"
+              type="radio"
+              name="transport"
+              value="Nej"
+              onChange={() => setTransport("Nej")}
+            />{" "}
+            Nej, vi ordnar egen transport
+          </label>
         </fieldset>
 
-        <label htmlFor="allergies">
-          Allergier:
-          <input
-            id="allergies"
-            type="text"
-            value={allergies}
-            onChange={(event) => setAllergies(event.target.value)}
-          />
-        </label>
-
         <label htmlFor="comments">
-          Övriga kommentarer:
+          Övriga kommentarer:{" "}
           <textarea
             id="comments"
             value={comments}
             onChange={(event) => setComments(event.target.value)}
+            className="border-solid border-jossanKalleBrand border-[1px] w-52 px-2 h-10"
           />
         </label>
-        <Button type="submit">Skicka svar</Button>
+        <Button type="submit" onClickFunction={closeModal}>
+          Skicka svar
+        </Button>
       </form>
     </dialog>
   );

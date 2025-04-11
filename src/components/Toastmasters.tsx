@@ -21,7 +21,7 @@ const Toastmasters = (): JSX.Element => {
         <article className="flex flex-col md:flex-row md:w-[500px] items-center md:items-start">
           <Image
             srcUrl={Viktor}
-            altText="Toastmaster Viktor"
+            altText="Toastmaster Viktor holding a sign that says: 'Toastmaster 2025-08-09'."
             customClass="px-5 mb-2"
           />
           <div className="flex-col text-jossanKalleBrand md:px-5">
@@ -38,7 +38,7 @@ const Toastmasters = (): JSX.Element => {
         <article className="flex flex-col md:flex-row md:w-[500px] items-center md:items-start mt-6">
           <Image
             srcUrl={Johan}
-            altText="Toastmaster Johan"
+            altText="Toastmaster Johan holding a sign that says: 'Toastmaster 2025-08-09'."
             customClass="px-5 mb-2"
           />
           <div className="flex-col text-jossanKalleBrand md:px-5">
