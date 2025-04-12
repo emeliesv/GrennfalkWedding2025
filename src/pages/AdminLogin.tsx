@@ -27,28 +27,39 @@ const AdminLogin = () => {
   };
 
   return (
-    <fieldset>
-      <legend>Admin login</legend>
-      <form onSubmit={handleLogin}>
-        <label htmlFor="email">E-post: </label>
-        <input
-          id="email"
-          type="email"
-          value={user.email}
-          onChange={(event) => setUser({ ...user, email: event.target.value })}
-        />
-        <label htmlFor="password">Lösenord: </label>
-        <input
-          id="password"
-          type="password"
-          value={user.password}
-          onChange={(event) =>
-            setUser({ ...user, password: event.target.value })
-          }
-        />
-        <button type="submit">Logga in</button>
-      </form>
-    </fieldset>
+    <main className="flex justify-center py-40">
+      <fieldset className="border-jossanKalleBrand border-[1px] w-80">
+        <legend>Admin login</legend>
+        <form onSubmit={handleLogin} className="flex flex-col p-10 gap-8">
+          <label htmlFor="email">E-post: </label>
+          <input
+            id="email"
+            type="email"
+            value={user.email}
+            onChange={(event) =>
+              setUser({ ...user, email: event.target.value })
+            }
+            className="border-jossanKalleBrand border-[1px] p-2"
+          />
+          <label htmlFor="password">Lösenord: </label>
+          <input
+            id="password"
+            type="password"
+            value={user.password}
+            onChange={(event) =>
+              setUser({ ...user, password: event.target.value })
+            }
+            className="border-jossanKalleBrand border-[1px] p-2"
+          />
+          <button
+            type="submit"
+            className=" min-w-60 bg-jossanKalleBrand rounded-full font-display text-jossanKalleSecondary text-2xl py-6"
+          >
+            Logga in
+          </button>
+        </form>
+      </fieldset>
+    </main>
   );
 };
 

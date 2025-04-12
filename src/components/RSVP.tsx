@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from "react";
-import { collection, addDoc /* Timestamp */ } from "firebase/firestore";
+import { collection, addDoc } from "firebase/firestore";
 import { db } from "../firebase/firebaseConfig";
 import { useModal } from "../context/DialogContext";
 import Button from "./Button";
