@@ -8,15 +8,24 @@ import AdminLogin from "./pages/AdminLogin";
 
 import ProtectedRoute from "./components/ProtectedRoute";
 import Home from "./pages/Home";
+import Login from "./pages/Login";
 
 const App = () => {
   return (
     <AuthProvider>
       <ModalProvider>
         <Router>
-          {/* Jag tror jag behöver lägga in Header här, men undersök då hur det blir med useRef och scrollbeteendet */}
           <Routes>
-            <Route path="/" element={<Home />} />
+            <Route path="/" element={<Login />} />
+            <Route
+              path="/start"
+              element={
+                <ProtectedRoute>
+                  <Home />
+                </ProtectedRoute>
+              }
+            />
+            {/* Undersök varför redirect från inkognito hamnar på AdminLogin */}
             <Route path="/login" element={<AdminLogin />} />
             <Route
               path="/admin"
@@ -27,7 +36,6 @@ const App = () => {
               }
             />
           </Routes>
-          {/* Jag tror jag behöver lägga in Footer här, men undersök då hur det blir med useRef och scrollbeteendet */}
         </Router>
       </ModalProvider>
     </AuthProvider>

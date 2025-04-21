@@ -16,17 +16,17 @@ const Footer = () => {
   const { openModal } = useModal();
 
   return (
-    <footer className="flex flex-col justify-center items-center py-10 px-6 md:px-0 bg-jossanKalleAccent">
+    <footer className="flex flex-col justify-center gap-5 items-center py-10 px-6 md:px-0 bg-jossanKalleAccent">
       <p className="md:text-center md:w-[615px]">
         GLÖM EJ: Namn på vilka som kommer, anmäl allergi/matpreferenser, om man
         vill åka med buss till och/eller från hotell i södertälje, annat viktigt
         vi kan behöva veta. <br />
-        <b>OBS! boende fixar man själv.</b>
+        <b>OBS! Boende fixar man själv.</b>
       </p>
-      <div className="flex flex-col gap-5 justify-center items-center">
+      <div className="flex flex-col gap-3 justify-center items-center">
         <Button onClickFunction={openModal}>RSVP</Button>
         <RSVP />
-        <div className="flex flex-col gap-3">
+        <div className="flex flex-col">
           <p className="py-4 w-full md:text-center">
             NU BÖRJAR VI NEDRÄKNINGEN! 
           </p>

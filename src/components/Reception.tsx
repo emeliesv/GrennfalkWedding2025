@@ -10,12 +10,12 @@ export const Reception = (): JSX.Element => {
         <figure className="px-5 py-6">
           <figcaption className="font-semibold">Schema</figcaption>
           <ul>
-            <li>Buss från Ad Astra till vigsel:</li>
-            <li>Vigsel:</li>
-            <li>Middag:</li>
-            <li>Buss från fest till hotell Ad Astra 1:</li>
-            <li>Buss från fest till hotell Ad Astra 2:</li>
-            <li>Last Call:</li>
+            <li>Buss från Ad Astra till vigsel: kl. 13.00</li>
+            <li>Vigsel: kl. 14.00 </li>
+            <li>Middag: kl. 17.00 </li>
+            <li>Buss från fest till hotell Ad Astra 1: kl. 23.00</li>
+            <li>Buss från fest till hotell Ad Astra 2: kl. 01.00</li>
+            <li>Last Call: kl. 01.00 (Ej satt i sten)</li>
           </ul>
         </figure>
         <div className="m-5">

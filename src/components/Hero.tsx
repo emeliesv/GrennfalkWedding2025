@@ -10,10 +10,12 @@ const Hero = () => {
         <h1 className="text-h1 text-center text-jossanKalleBrand font-display">
           We're getting married!
         </h1>
+
         <p>09 Augusti 2025</p>
-        <p>Bröthagen, 147 91 Grödinge</p>
+        <p className="mb-4">Bröthagen, 147 91 Grödinge</p>
         <Button onClickFunction={openModal}>RSVP</Button>
         <RSVP />
+        <p className="m-4">OBS! Svara senast 15 juni</p>
       </article>
       <div className="bg-jossanKalleBrand px-14 md:px-28 py-5">
         <figure>

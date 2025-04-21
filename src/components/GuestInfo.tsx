@@ -1,7 +1,11 @@
+import JK from "/assets/J+K.jpg?url";
 import cake from "/assets/tårta.png?url";
 import Image from "./ImageComponent";
+import { useMediaQuery } from "react-responsive";
 
 export const GuestInfo = (): JSX.Element => {
+  const isLargeScreen = useMediaQuery({ minWidth: 768 });
+
   return (
     <section className="flex flex-col p-6 md:p-5 bg-jossanKalleSecondary">
       <h2 className="text-center font-display text-3xl md:text-6xl mt-3 mb-5">
@@ -14,9 +18,9 @@ export const GuestInfo = (): JSX.Element => {
             Sommarfin!
           </p>
           <p>
-            <b>Mat och dryck: </b>Bubbel med snittar efter vigseln och sedan
-            middag. Allergier/kostavvikelser anmäls i RSVP. Fri bar! Med eller
-            utan alkohol.
+            <b>Mat och dryck: </b>Bubbel och enklare tilltugg efter vigseln och
+            sedan middag. Allergier/kostavvikelser anmäls i RSVP. Fri bar! Med
+            eller utan alkohol.
           </p>
           <p>
             <b>OSA: </b>Svara längst upp eller längst ned på sidan. Sista
@@ -40,7 +44,25 @@ export const GuestInfo = (): JSX.Element => {
             dagen/kvällen.
           </p>
         </div>
-        <Image srcUrl={cake} altText="" />
+        <div
+          className={`flex justify-center items-center ${
+            isLargeScreen ? "mx-10" : "mx-5"
+          }`}
+        >
+          <Image
+            srcUrl={isLargeScreen ? JK : cake}
+            altText=""
+            size={isLargeScreen ? "xsmall" : "medium"}
+          />
+        </div>
+        {/* <picture className="flex justify-center items-center">
+          <source
+            srcSet={JK}
+            media="(min-width: 768px)"
+            className="min-h-80 max-h-96"
+          />
+          <img src={cake} alt="" className="max-h-52 mx-10" />
+        </picture> */}
         <div className="flex flex-col gap-2 md:w-[400px] text-bodyregular">
           <p>
             <b>Transport:</b> Se informationsrutan om transport. Vi ordnar buss
@@ -48,10 +70,10 @@ export const GuestInfo = (): JSX.Element => {
             åka med bussen tillbaka till hotellet. Om du planerar att ta en taxi
             hem rekommenderar vi att du bokar en i förväg - av erfarenhet vet vi
             att det kan vara lite krångligt för taxi att ta sig ut till oss.
-            Samåk gärna om det går! till hotellet.
+            Samåk gärna om det går!
           </p>
           <p>
-            <b>Parkering:</b> Det går bra att ta egen bild. Följ skyltningen på
+            <b>Parkering:</b> Det går bra att ta egen bil. Följ skyltningen på
             plats för parkering. Det är även möjligt att lämna bilen över
             natten.
           </p>

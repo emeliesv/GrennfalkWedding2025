@@ -46,6 +46,9 @@ const AdminPage = () => {
       <div className="flex flex-col w-full items-end px-10">
         <h3>Det här är en adminsida</h3>
         <p>{currentUser?.email} är inloggad</p>
+        <button onClick={handleLogOut} className="hover:font-bold">
+          Logga ut
+        </button>
       </div>
 
       <div>
@@ -57,7 +60,9 @@ const AdminPage = () => {
                 key={res.timestamp}
                 className="flex flex-col border-t-[1px] border-black px-10 py-2"
               >
-                <h3 className="text-lg font-bold">{res.name}</h3>
+                <h3 className="text-lg font-bold text-jossanKalleBrand">
+                  Namn: {res.name}
+                </h3>
                 <div className="flex">
                   <p className="font-semibold">Har svarat:</p>
                   <p>{res.attendance}</p>
