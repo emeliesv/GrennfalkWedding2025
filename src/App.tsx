@@ -25,7 +25,6 @@ const App = () => {
                 </ProtectedRoute>
               }
             />
-            {/* Undersök varför redirect från inkognito hamnar på AdminLogin */}
             <Route path="/login" element={<AdminLogin />} />
             <Route
               path="/admin"
