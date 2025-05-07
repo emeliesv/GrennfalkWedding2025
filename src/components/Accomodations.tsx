@@ -11,6 +11,8 @@ export const Accomodations = (): JSX.Element => {
             Behöver man boende ser vi gärna att man bokar hotell{" "}
             <a
               href="https://www.elite.se/?hotel=EL041&checkIn=2025-08-08&checkOut=2025-08-10&guests=2&rooms=1&adults=2&group=7344905&step=step3packages"
+              target="_blank"
+              rel="noopener noreferrer"
               className="underline hover:font-semibold"
             >
               Ad Astra by Elite
